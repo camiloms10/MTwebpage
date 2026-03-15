@@ -26,7 +26,7 @@
 						No como medio. No como cuenta de noticias. Como una voz madridista que ya se reconoce.
 					</p>
 					<div class="hero-actions">
-						<a href="https://enfrio.madridtotal.mx/" class="button primary" target="_blank" rel="noopener noreferrer">Suscribirse a EN FRIO</a>
+						<a href="#newsletter" class="button primary scrolly">Suscribirse a EN FRIO</a>
 						<a href="#fantasy" class="button ghost scrolly">Ver fantasy</a>
 					</div>
 				</div>
@@ -75,7 +75,7 @@
 				<li><a href="#fantasy">Fantasy</a></li>
 			</ul>
 			<ul class="icons nav-cta">
-				<li><a href="https://enfrio.madridtotal.mx/" class="button nav-button" target="_blank" rel="noopener noreferrer">Ir a EN FRIO</a></li>
+				<li><a href="#newsletter" class="button nav-button scrolly">Suscribirse</a></li>
 			</ul>
 		</nav>
 
@@ -249,20 +249,26 @@
 						<ul class="newsletter-points">
 							<li>Lectura directa, con menos ruido y mas idea.</li>
 							<li>Un canal propio para que la relacion no dependa solo del timeline.</li>
-							<li>Acceso directo al entorno Beehiiv de EN FRIO.</li>
+							<li>Suscripcion directa desde la web de Madrid Total.</li>
 							<li>El lugar ideal para que la gente diga: esto lo dijo MT.</li>
 						</ul>
 						<div class="newsletter-links">
 							<a href="newsletter.html" class="button primary">Ver hub del newsletter</a>
-							<a href="https://enfrio.madridtotal.mx/" class="newsletter-inline-link" target="_blank" rel="noopener noreferrer">Suscribirme en EN FRIO</a>
+							<a href="#newsletter" class="newsletter-inline-link scrolly">Suscribirme en EN FRIO</a>
 						</div>
 					</div>
-					<form class="cta-form" method="get" action="https://enfrio.madridtotal.mx/" aria-label="Formulario de newsletter">
-						<label for="email" class="sr-only">Correo electronico</label>
-						<input type="email" name="email" id="email" placeholder="Tu correo para continuar a EN FRIO" />
-						<button type="submit" class="button primary">Continuar a EN FRIO</button>
-						<p class="form-note">Te llevamos directo al newsletter de Beehiiv en `enfrio.madridtotal.mx`.</p>
-					</form>
+					<div class="newsletter-embed-shell" aria-label="Suscripcion a EN FRIO">
+						<p class="newsletter-embed-label">Suscribete sin salir de la web</p>
+						<iframe
+							src="https://subscribe-forms.beehiiv.com/b87f7645-0eed-4487-b339-8bfe2fe6ed06"
+							class="beehiiv-embed madrid-beehiiv-embed"
+							data-test-id="beehiiv-embed"
+							frameborder="0"
+							scrolling="no"
+							title="Suscripcion a EN FRIO"
+						></iframe>
+						<p class="form-note">El alta ocurre aqui mismo y quedas dentro de EN FRIO.</p>
+					</div>
 				</div>
 			</section>
 
@@ -423,6 +429,8 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+	<script async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 
 </body>
 </html>

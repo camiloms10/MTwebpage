@@ -33,7 +33,7 @@
 				<li><a href="index.html#partners">Colaboraciones</a></li>
 			</ul>
 			<ul class="icons nav-cta">
-				<li><a href="https://enfrio.madridtotal.mx/" class="button nav-button" target="_blank" rel="noopener noreferrer">Suscribirse</a></li>
+				<li><a href="#article-subscribe" class="button nav-button scrolly">Suscribirse</a></li>
 			</ul>
 		</nav>
 
@@ -41,6 +41,31 @@
 			<section class="madrid-section article-shell">
 				<div id="article-status" class="newsletter-status" aria-live="polite">Cargando articulo...</div>
 				<article id="newsletter-article" hidden></article>
+			</section>
+			<section class="madrid-section newsletter-signup-band" aria-labelledby="article-subscribe">
+				<div class="newsletter-signup-shell">
+					<div>
+						<p class="eyebrow">Suscripcion</p>
+						<h2 id="article-subscribe">Si te gustó este texto, EN FRIO te llega directo al correo.</h2>
+					</div>
+					<div class="newsletter-signup-content">
+						<div class="newsletter-embed-shell newsletter-embed-shell-light" aria-label="Suscripcion a EN FRIO">
+							<p class="newsletter-embed-label">Suscripcion directa</p>
+							<iframe
+								src="https://subscribe-forms.beehiiv.com/b87f7645-0eed-4487-b339-8bfe2fe6ed06"
+								class="beehiiv-embed madrid-beehiiv-embed"
+								data-test-id="beehiiv-embed"
+								frameborder="0"
+								scrolling="no"
+								title="Suscripcion a EN FRIO"
+							></iframe>
+						</div>
+						<div class="newsletter-signup-actions">
+							<a href="newsletter.html" class="button primary">Volver al newsletter</a>
+							<a href="index.html" class="button ghost-light">Ir al home</a>
+						</div>
+					</div>
+				</div>
 			</section>
 		</main>
 
@@ -64,8 +89,8 @@
 					<p><a href="mailto:contacto@madridtotal.mx">contacto@madridtotal.mx</a></p>
 				</section>
 				<section>
-					<h3>Beehiiv</h3>
-					<p><a id="article-external-link" href="https://enfrio.madridtotal.mx/" target="_blank" rel="noopener noreferrer">Abrir version original</a></p>
+					<h3>Suscripcion</h3>
+					<p><a href="#article-subscribe" class="scrolly">Recibir EN FRIO</a></p>
 				</section>
 			</section>
 		</footer>
@@ -73,7 +98,7 @@
 		<div id="copyright">
 			<ul>
 				<li>&copy; Madrid Total</li>
-				<li>Post individual listo para sincronizar con Beehiiv</li>
+				<li>Post individual integrado dentro de Madrid Total</li>
 			</ul>
 		</div>
 
@@ -88,6 +113,8 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/custom.js"></script>
 	<script src="assets/js/newsletter.js"></script>
+	<script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+	<script async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 
 </body>
 </html>
