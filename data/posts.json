@@ -1,0 +1,47 @@
+{
+  "publication": {
+    "name": "EN FRIO",
+    "tagline": "La lectura de Madrid Total para arrancar el dia con criterio."
+  },
+  "posts": [
+    {
+      "id": "demo-001",
+      "slug": "bellingham-sigue-marcando-el-tempo",
+      "title": "Bellingham sigue marcando el tempo de este Madrid",
+      "excerpt": "Una lectura corta sobre como el ritmo del equipo se ordena alrededor de su capacidad para acelerar o pausar cada jugada.",
+      "cover_image_url": "images/pic01.jpg",
+      "author": "Madrid Total",
+      "published_at": "2026-03-15T08:00:00Z",
+      "reading_time_minutes": 4,
+      "tags": ["Analisis", "Real Madrid", "Bellingham"],
+      "web_url": "https://enfrio.madridtotal.mx/",
+      "content_html": "<p>Este es un post demo para montar la base editorial. Cuando conectemos Beehiiv, este HTML vendra del contenido real del newsletter.</p><p>La idea es que Madrid Total conserve su identidad visual, pero siga usando Beehiiv como sistema de edicion, envios y captacion.</p><p>Con esta base, cada publicacion puede vivir tambien dentro del sitio principal, con una lectura mas alineada al resto del ecosistema.</p>"
+    },
+    {
+      "id": "demo-002",
+      "slug": "vinicius-y-el-espacio-que-rompe-partidos",
+      "title": "Vinicius y el espacio que rompe partidos",
+      "excerpt": "Cuando el rival cierra por dentro, el partido se parte en cuanto Vinicius encuentra metros para correr de cara.",
+      "cover_image_url": "images/pic04.jpg",
+      "author": "Madrid Total",
+      "published_at": "2026-03-14T08:00:00Z",
+      "reading_time_minutes": 3,
+      "tags": ["Tactica", "Vinicius", "Partido"],
+      "web_url": "https://enfrio.madridtotal.mx/",
+      "content_html": "<p>Otro ejemplo de publicacion para poblar el listado inicial. Aqui podremos renderizar el HTML largo que entregue Beehiiv una vez activemos el script de sincronizacion.</p>"
+    },
+    {
+      "id": "demo-003",
+      "slug": "arbitraje-relato-y-ruido-en-la-semana-blanca",
+      "title": "Arbitraje, relato y ruido en la semana blanca",
+      "excerpt": "No todo el volumen de una semana grande importa igual. Hay conversaciones que solo sirven para ensuciar el foco.",
+      "cover_image_url": "images/pic06.jpg",
+      "author": "Madrid Total",
+      "published_at": "2026-03-12T08:00:00Z",
+      "reading_time_minutes": 5,
+      "tags": ["Opinion", "Actualidad"],
+      "web_url": "https://enfrio.madridtotal.mx/",
+      "content_html": "<p>Este tercer post demo completa la base para que puedas probar cards, featured post y pagina individual.</p>"
+    }
+  ]
+}

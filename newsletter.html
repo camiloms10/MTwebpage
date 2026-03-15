@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<title>Madrid Total | Newsletter</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Hub editorial de EN FRIO dentro de Madrid Total, con el mismo lenguaje visual de la marca." />
+	<link rel="icon" type="image/jpeg" href="images/madridtotal-logo.png.jpeg" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/custom.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+<body class="is-preload newsletter-page">
+
+	<div id="wrapper" class="fade-in">
+
+		<header id="header">
+			<a href="index.html" class="logo" aria-label="Madrid Total, ir al inicio">
+				<span class="logo-mark logo-mark-image">
+					<img src="images/madridtotal-logo.png.jpeg" alt="Logo de Madrid Total" />
+				</span>
+				<span class="logo-text">Madrid Total</span>
+			</a>
+		</header>
+
+		<nav id="nav" aria-label="Navegacion principal">
+			<ul class="links">
+				<li><a href="index.html">Inicio</a></li>
+				<li class="active"><a href="newsletter.html">Newsletter</a></li>
+				<li><a href="index.html#redes">Redes</a></li>
+				<li><a href="index.html#partners">Colaboraciones</a></li>
+				<li><a href="index.html#fantasy">Fantasy</a></li>
+			</ul>
+			<ul class="icons nav-cta">
+				<li><a href="https://enfrio.madridtotal.mx/" class="button nav-button" target="_blank" rel="noopener noreferrer">Suscribirse</a></li>
+			</ul>
+		</nav>
+
+		<main id="main">
+			<section class="madrid-section newsletter-hero" aria-labelledby="newsletter-hero-title">
+				<div class="newsletter-hero-shell">
+					<div class="newsletter-hero-copy">
+						<p class="eyebrow">EN FRIO</p>
+						<h1 id="newsletter-hero-title">El newsletter de Madrid Total con la misma cara de la marca.</h1>
+						<p>
+							Esta base ya deja listo el hub editorial para traer publicaciones de Beehiiv y mostrarlas
+							dentro del sitio con una experiencia mucho mas consistente.
+						</p>
+						<div class="hero-actions">
+							<a href="https://enfrio.madridtotal.mx/" class="button primary" target="_blank" rel="noopener noreferrer">Suscribirme</a>
+							<a href="#latest-posts" class="button ghost scrolly">Ver articulos</a>
+						</div>
+					</div>
+					<div class="newsletter-hero-panel">
+						<p class="panel-kicker">Base conectable a Beehiiv</p>
+						<ul class="newsletter-hero-points">
+							<li>Listado de posts renderizado desde JSON.</li>
+							<li>Post individual dentro de la web de Madrid Total.</li>
+							<li>Preparado para sincronizar con la API sin exponer la key.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="madrid-section newsletter-feed" aria-labelledby="latest-posts">
+				<div class="section-heading left">
+					<p class="eyebrow">Archivo</p>
+					<h2 id="latest-posts">Ultimas publicaciones</h2>
+					<p>
+						El contenido de esta pagina se lee desde <code>data/posts.json</code>. Cuando conectemos Beehiiv,
+						ese archivo se actualizara automaticamente con tus ultimos envios.
+					</p>
+				</div>
+
+				<div id="newsletter-status" class="newsletter-status" aria-live="polite">Cargando publicaciones...</div>
+
+				<section id="newsletter-featured" class="newsletter-featured-card" hidden></section>
+
+				<section>
+					<div id="newsletter-list" class="newsletter-post-grid" aria-live="polite"></div>
+				</section>
+			</section>
+
+			<section class="madrid-section newsletter-signup-band" aria-labelledby="signup-title">
+				<div class="newsletter-signup-shell">
+					<div>
+						<p class="eyebrow">Suscripcion</p>
+						<h2 id="signup-title">La captura sigue viviendo en Beehiiv, pero la experiencia ya puede vivir aqui.</h2>
+					</div>
+					<div class="newsletter-signup-actions">
+						<a href="https://enfrio.madridtotal.mx/" class="button primary" target="_blank" rel="noopener noreferrer">Ir a EN FRIO</a>
+						<a href="index.html" class="button ghost-light">Volver al home</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer id="footer">
+			<section class="footer-brand">
+				<a href="index.html" class="footer-logo">
+					<span class="logo-mark logo-mark-image">
+						<img src="images/madridtotal-logo.png.jpeg" alt="Logo de Madrid Total" />
+					</span>
+					<span class="logo-text">Madrid Total</span>
+				</a>
+				<p>Hub editorial para mostrar EN FRIO con el mismo lenguaje visual del resto del ecosistema.</p>
+			</section>
+			<section class="split contact">
+				<section>
+					<h3>Explorar</h3>
+					<p><a href="index.html">Inicio</a><br /><a href="newsletter.html">Newsletter</a><br /><a href="index.html#redes">Redes</a></p>
+				</section>
+				<section>
+					<h3>Contacto</h3>
+					<p><a href="mailto:contacto@madridtotal.mx">contacto@madridtotal.mx</a></p>
+				</section>
+				<section>
+					<h3>Plataforma</h3>
+					<p><a href="https://enfrio.madridtotal.mx/" target="_blank" rel="noopener noreferrer">Abrir EN FRIO</a></p>
+				</section>
+			</section>
+		</footer>
+
+		<div id="copyright">
+			<ul>
+				<li>&copy; Madrid Total</li>
+				<li>Newsletter hub listo para integrarse con Beehiiv</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/newsletter.js"></script>
+
+</body>
+</html>
