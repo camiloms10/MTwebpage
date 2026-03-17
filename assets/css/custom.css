@@ -943,6 +943,19 @@ a {
 	color: var(--white);
 }
 
+.newsletter-signup-shell-compact {
+	align-items: start;
+	padding: 1.65rem 1.85rem;
+}
+
+.newsletter-signup-copy {
+	max-width: 24rem;
+}
+
+.newsletter-signup-shell-compact .newsletter-signup-content {
+	min-width: min(100%, 38rem);
+}
+
 .newsletter-signup-actions {
 	display: flex;
 	flex-wrap: wrap;
@@ -1663,6 +1676,10 @@ a {
 		padding: 1.4rem;
 	}
 
+	.newsletter-signup-shell-compact {
+		padding: 1.35rem;
+	}
+
 	.partners-cta {
 		flex-direction: column;
 		align-items: flex-start;
@@ -1691,6 +1708,10 @@ a {
 
 	.newsletter-signup-shell {
 		padding: 1.1rem;
+	}
+
+	.newsletter-signup-copy {
+		max-width: none;
 	}
 
 	#intro h1 {
@@ -1756,23 +1777,33 @@ a {
 		left: 1rem;
 		right: 1rem;
 		bottom: 1rem;
-		padding: 0.95rem;
+		padding: 0.9rem;
 	}
 
 	.scorecard-line {
-		gap: 0.75rem;
-		align-items: flex-start;
+		flex-direction: column;
+		gap: 0.3rem;
+		align-items: stretch;
+		padding: 0.7rem 0;
 	}
 
 	.scorecard-line span,
 	.scorecard-line strong {
-		flex: 1 1 auto;
+		flex: none;
+		max-width: none;
+		width: 100%;
+		text-align: left;
 	}
 
 	.scorecard-line strong {
-		max-width: 58%;
 		font-size: 0.96rem;
-		line-height: 1.35;
+		line-height: 1.28;
+	}
+
+	.scorecard-foot {
+		margin-top: 0.7rem;
+		font-size: 0.84rem;
+		line-height: 1.55;
 	}
 
 	.section-heading {
@@ -1879,6 +1910,16 @@ a {
 	.form-note {
 		font-size: 0.82rem;
 		line-height: 1.5;
+	}
+
+	#footer {
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
+	}
+
+	#footer > .split.contact > section {
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.teaser-scoreboard {

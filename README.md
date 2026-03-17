@@ -19,6 +19,14 @@ node scripts/sync-beehiiv-posts.mjs
 
 Eso actualiza `data/posts.json` y luego solo necesitas hacer commit y push para verlo en GitHub Pages.
 
+Tambien tienes un workflow en `.github/workflows/sync-beehiiv.yml` para sincronizar automaticamente una vez al dia desde GitHub Actions.
+Para que funcione, agrega estos secrets en GitHub:
+
+- `BEEHIIV_API_KEY`
+- `BEEHIIV_PUBLICATION_ID`
+
+Cada vez que el workflow detecte cambios en `data/posts.json`, hace commit al repo. Si tu proyecto esta conectado a Vercel, Vercel redeploya solo despues de ese push.
+
 ## Suscripcion propia a Beehiiv
 
 La web ahora usa un formulario propio en lugar del embed de Beehiiv.
