@@ -174,6 +174,8 @@
 		var status = document.getElementById("newsletter-status");
 		var featured = document.getElementById("newsletter-featured");
 		var list = document.getElementById("newsletter-list");
+		var loadMoreWrap = document.getElementById("newsletter-load-more-wrap");
+		var loadMoreButton = document.getElementById("newsletter-load-more");
 
 		if (!status || !featured || !list) return;
 
@@ -189,6 +191,34 @@
 
 		var primary = posts[0];
 		var secondary = posts.slice(1);
+		var visibleCount = 2;
+
+		function renderCard(post) {
+			return [
+				'<article class="newsletter-card">',
+				'<a class="newsletter-card-link" href="newsletter-post.html?slug=' + encodeURIComponent(post.slug) + '" aria-label="Leer ' + escapeHtml(post.title) + '">',
+				'<span class="newsletter-card-image" style="background-image: linear-gradient(180deg, rgba(12, 17, 24, 0.05), rgba(12, 17, 24, 0.72)), url(\'' + escapeHtml(post.cover_image_url) + '\');"></span>',
+				'<div class="newsletter-card-body">',
+				'<p class="featured-meta">' + escapeHtml(buildMetaLine([formatDate(post.published_at)])) + '</p>',
+				'<h3>' + escapeHtml(post.title) + '</h3>',
+				'<p>' + escapeHtml(post.excerpt) + '</p>',
+				'<div class="card-tags">' + (post.tags || []).map(function (tag) {
+					return '<span>' + escapeHtml(tag) + '</span>';
+				}).join("") + '</div>',
+				'</div>',
+				'</a>',
+				'</article>'
+			].join("");
+		}
+
+		function renderSecondary() {
+			list.innerHTML = secondary.slice(0, visibleCount).map(renderCard).join("");
+
+			if (!loadMoreWrap || !loadMoreButton) return;
+			var hasMore = visibleCount < secondary.length;
+			loadMoreWrap.hidden = !hasMore;
+			loadMoreButton.hidden = !hasMore;
+		}
 
 		featured.hidden = false;
 		featured.innerHTML = [
@@ -205,23 +235,14 @@
 			'</a>'
 		].join("");
 
-		list.innerHTML = secondary.map(function (post) {
-			return [
-				'<article class="newsletter-card">',
-				'<a class="newsletter-card-link" href="newsletter-post.html?slug=' + encodeURIComponent(post.slug) + '" aria-label="Leer ' + escapeHtml(post.title) + '">',
-				'<span class="newsletter-card-image" style="background-image: linear-gradient(180deg, rgba(12, 17, 24, 0.05), rgba(12, 17, 24, 0.72)), url(\'' + escapeHtml(post.cover_image_url) + '\');"></span>',
-				'<div class="newsletter-card-body">',
-				'<p class="featured-meta">' + escapeHtml(buildMetaLine([formatDate(post.published_at)])) + '</p>',
-				'<h3>' + escapeHtml(post.title) + '</h3>',
-				'<p>' + escapeHtml(post.excerpt) + '</p>',
-				'<div class="card-tags">' + (post.tags || []).map(function (tag) {
-					return '<span>' + escapeHtml(tag) + '</span>';
-				}).join("") + '</div>',
-				'</div>',
-				'</a>',
-				'</article>'
-			].join("");
-		}).join("");
+		renderSecondary();
+
+		if (loadMoreButton) {
+			loadMoreButton.onclick = function () {
+				visibleCount += 3;
+				renderSecondary();
+			};
+		}
 	}
 
 	function renderArticle(data) {
