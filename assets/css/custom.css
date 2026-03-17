@@ -672,6 +672,71 @@ a {
 	border-bottom: 0;
 }
 
+.social-proof-section {
+	background: linear-gradient(180deg, rgba(248, 246, 241, 0.96), rgba(243, 240, 232, 0.9));
+}
+
+.social-proof-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.25rem;
+}
+
+.social-proof-card {
+	padding: 1.75rem;
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow);
+}
+
+.social-proof-card-dark {
+	background:
+		radial-gradient(circle at top right, rgba(199, 169, 104, 0.14), transparent 30%),
+		linear-gradient(145deg, #0e131b, #121a25);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.social-proof-card-light {
+	background:
+		radial-gradient(circle at top left, rgba(199, 169, 104, 0.12), transparent 28%),
+		linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(245, 241, 233, 0.94));
+	border: 1px solid rgba(15, 20, 29, 0.08);
+}
+
+.social-proof-kicker {
+	margin: 0 0 0.8rem 0;
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--gold);
+}
+
+.social-proof-card h3 {
+	margin-bottom: 0.8rem;
+	font-size: 1.7rem;
+	line-height: 1.08;
+}
+
+.social-proof-card-dark h3 {
+	color: var(--white);
+}
+
+.social-proof-card-light h3 {
+	color: var(--ink);
+}
+
+.social-proof-card p:last-of-type {
+	margin-bottom: 1.35rem;
+}
+
+.social-proof-card-dark p {
+	color: rgba(243, 240, 232, 0.8);
+}
+
+.social-proof-card-light p {
+	color: rgba(15, 20, 29, 0.7);
+}
+
 .newsletter-shell {
 	display: grid;
 	grid-template-columns: minmax(0, 0.82fr) minmax(26rem, 1.18fr);
@@ -1800,6 +1865,7 @@ a {
 
 	.hero-shell,
 	.social-layout,
+	.social-proof-grid,
 	.newsletter-post-grid,
 	.partners-grid,
 	.partners-showcase,
