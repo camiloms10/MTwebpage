@@ -20,6 +20,10 @@
 			.replace(/'/g, "&#39;");
 	}
 
+	function buildMetaLine(parts) {
+		return parts.filter(Boolean).join(" · ");
+	}
+
 	function sanitizeBeehiivContent(html) {
 		if (!html || typeof html !== "string") return "";
 		var parser = new DOMParser();
@@ -173,7 +177,9 @@
 
 		if (!status || !featured || !list) return;
 
-		var posts = Array.isArray(data.posts) ? data.posts.slice() : [];
+		var posts = Array.isArray(data.posts) ? data.posts.slice().sort(function (a, b) {
+			return new Date(b.published_at || 0) - new Date(a.published_at || 0);
+		}) : [];
 		if (!posts.length) {
 			status.textContent = "Todavia no hay publicaciones sincronizadas.";
 			return;
@@ -186,33 +192,33 @@
 
 		featured.hidden = false;
 		featured.innerHTML = [
+			'<a class="newsletter-card-link newsletter-card-link-featured" href="newsletter-post.html?slug=' + encodeURIComponent(primary.slug) + '" aria-label="Leer ' + escapeHtml(primary.title) + '">',
 			'<div class="featured-media" style="background-image: linear-gradient(180deg, rgba(9, 12, 17, 0.18), rgba(9, 12, 17, 0.72)), url(\'' + escapeHtml(primary.cover_image_url) + '\');"></div>',
 			'<div class="featured-copy">',
-			'<p class="featured-meta">' + escapeHtml(formatDate(primary.published_at)) + ' · ' + escapeHtml(primary.reading_time_minutes) + ' min</p>',
+			'<p class="featured-meta">' + escapeHtml(buildMetaLine([formatDate(primary.published_at)])) + '</p>',
 			'<h3>' + escapeHtml(primary.title) + '</h3>',
 			'<p>' + escapeHtml(primary.excerpt) + '</p>',
 			'<div class="card-tags">' + (primary.tags || []).map(function (tag) {
 				return '<span>' + escapeHtml(tag) + '</span>';
 			}).join("") + '</div>',
-			'<div class="newsletter-card-actions">',
-			'<a class="button primary" href="newsletter-post.html?slug=' + encodeURIComponent(primary.slug) + '">Leer dentro de Madrid Total</a>',
-			'<a class="newsletter-inline-link" href="#signup-title">Suscribirme a EN FRIO</a>',
 			'</div>',
-			'</div>'
+			'</a>'
 		].join("");
 
 		list.innerHTML = secondary.map(function (post) {
 			return [
 				'<article class="newsletter-card">',
-				'<a class="newsletter-card-image" href="newsletter-post.html?slug=' + encodeURIComponent(post.slug) + '" style="background-image: linear-gradient(180deg, rgba(12, 17, 24, 0.05), rgba(12, 17, 24, 0.72)), url(\'' + escapeHtml(post.cover_image_url) + '\');"></a>',
+				'<a class="newsletter-card-link" href="newsletter-post.html?slug=' + encodeURIComponent(post.slug) + '" aria-label="Leer ' + escapeHtml(post.title) + '">',
+				'<span class="newsletter-card-image" style="background-image: linear-gradient(180deg, rgba(12, 17, 24, 0.05), rgba(12, 17, 24, 0.72)), url(\'' + escapeHtml(post.cover_image_url) + '\');"></span>',
 				'<div class="newsletter-card-body">',
-				'<p class="featured-meta">' + escapeHtml(formatDate(post.published_at)) + ' · ' + escapeHtml(post.reading_time_minutes) + ' min</p>',
-				'<h3><a href="newsletter-post.html?slug=' + encodeURIComponent(post.slug) + '">' + escapeHtml(post.title) + '</a></h3>',
+				'<p class="featured-meta">' + escapeHtml(buildMetaLine([formatDate(post.published_at)])) + '</p>',
+				'<h3>' + escapeHtml(post.title) + '</h3>',
 				'<p>' + escapeHtml(post.excerpt) + '</p>',
 				'<div class="card-tags">' + (post.tags || []).map(function (tag) {
 					return '<span>' + escapeHtml(tag) + '</span>';
 				}).join("") + '</div>',
 				'</div>',
+				'</a>',
 				'</article>'
 			].join("");
 		}).join("");
@@ -243,7 +249,7 @@
 			'<header class="article-header">',
 			'<p class="eyebrow">EN FRIO</p>',
 			'<h1>' + escapeHtml(post.title) + '</h1>',
-			'<p class="article-meta">' + escapeHtml(formatDate(post.published_at)) + ' · ' + escapeHtml(post.author || "Madrid Total") + ' · ' + escapeHtml(post.reading_time_minutes) + ' min</p>',
+			'<p class="article-meta">' + escapeHtml(buildMetaLine([formatDate(post.published_at), post.author || "Madrid Total"])) + '</p>',
 			'<p class="article-excerpt">' + escapeHtml(post.excerpt) + '</p>',
 			'<div class="article-cover"><img src="' + escapeHtml(post.cover_image_url) + '" alt="' + escapeHtml(post.title) + '"></div>',
 			'</header>',

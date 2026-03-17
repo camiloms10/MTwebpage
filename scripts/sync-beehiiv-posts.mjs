@@ -104,17 +104,35 @@ function normalizePost(post) {
 		cover_image_url: post.thumbnail_url || post.cover_image_url || "images/pic01.jpg",
 		author: post.authors && post.authors.length ? (post.authors[0].name || post.authors[0]) : "Madrid Total",
 		published_at: toIsoDate(post.publish_date || post.displayed_date || post.created),
-		reading_time_minutes: post.reading_time || 4,
+		reading_time_minutes: post.reading_time || null,
 		tags: post.content_tags || [],
 		web_url: post.web_url,
 		content_html: post.content?.web || post.content?.free_web || null
 	};
 }
 
+async function fetchAllPosts(baseUrl) {
+	let page = 1;
+	const pageSize = 100;
+	const collected = [];
+
+	while (true) {
+		const listData = await fetchJson(`${baseUrl}?limit=${pageSize}&page=${page}&status=confirmed`);
+		const posts = Array.isArray(listData.data) ? listData.data : [];
+		if (!posts.length) break;
+
+		collected.push(...posts);
+
+		if (posts.length < pageSize) break;
+		page += 1;
+	}
+
+	return collected;
+}
+
 async function main() {
 	const baseUrl = `https://api.beehiiv.com/v2/publications/${publicationId}/posts`;
-	const listData = await fetchJson(`${baseUrl}?limit=10&status=confirmed`);
-	const posts = Array.isArray(listData.data) ? listData.data : [];
+	const posts = await fetchAllPosts(baseUrl);
 
 	const expandedPosts = await Promise.all(posts.map(async (post) => {
 		const postData = await fetchJson(`${baseUrl}/${post.id}?expand[]=content&expand[]=authors`);
@@ -126,7 +144,7 @@ async function main() {
 			normalized.content_html = "<p>No pudimos recuperar el cuerpo completo de este post desde Beehiiv.</p>";
 		}
 		return normalized;
-	}));
+	})).then((items) => items.sort((a, b) => new Date(b.published_at || 0) - new Date(a.published_at || 0)));
 
 	const payload = {
 		publication: {

@@ -817,6 +817,24 @@ a {
 	border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.newsletter-card-link {
+	display: block;
+	height: 100%;
+	color: inherit;
+	text-decoration: none;
+}
+
+.newsletter-card-link:hover .featured-copy h3,
+.newsletter-card-link:hover .newsletter-card-body h3 {
+	color: var(--gold);
+}
+
+.newsletter-card-link-featured {
+	display: grid;
+	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+	height: 100%;
+}
+
 .featured-media,
 .newsletter-card-image {
 	background-position: center;
@@ -876,11 +894,6 @@ a {
 	font-size: 1.45rem;
 }
 
-.newsletter-card h3 a,
-.newsletter-card h3 a:hover {
-	color: var(--white);
-}
-
 .card-tags {
 	display: flex;
 	flex-wrap: wrap;
@@ -929,29 +942,30 @@ a {
 .newsletter-signup-content {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 0.85rem;
 	min-width: min(100%, 46rem);
 	width: 100%;
 }
 
 .newsletter-embed-shell {
 	width: 100%;
-	padding: 1rem;
-	border-radius: 1.4rem;
+	padding: 0.7rem;
+	border-radius: 1.2rem;
 	background:
-		linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+		linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	overflow: hidden;
 }
 
 .newsletter-embed-shell-light {
 	background:
-		linear-gradient(180deg, rgba(9, 12, 17, 0.12), rgba(9, 12, 17, 0.05));
-	border-color: rgba(15, 20, 29, 0.08);
+		linear-gradient(180deg, rgba(9, 12, 17, 0.08), rgba(9, 12, 17, 0.03));
+	border-color: rgba(15, 20, 29, 0.06);
 }
 
 .newsletter-embed-label {
-	margin: 0 0 0.75rem 0;
+	margin: 0 0 0.55rem 0;
 	font-size: 0.72rem;
 	font-weight: 800;
 	letter-spacing: 0.14em;
@@ -959,26 +973,121 @@ a {
 	color: var(--gold);
 }
 
-.madrid-beehiiv-embed {
-	display: block;
-	width: 100%;
-	height: 430px;
-	min-height: 430px;
+.subscribe-card-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin-bottom: 0.9rem;
+	padding: 1rem 1.05rem;
+	border-radius: 1rem;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+	border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.subscribe-card-intro strong {
+	font-family: "Cormorant Garamond", serif;
+	font-size: clamp(1.55rem, 3vw, 2rem);
+	line-height: 1;
+	color: var(--white);
+}
+
+.subscribe-card-intro span {
+	color: rgba(243, 240, 232, 0.74);
+	line-height: 1.65;
+}
+
+.newsletter-subscribe-form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.subscribe-field-row {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.subscribe-input {
+	height: 3.5rem;
+	padding: 0 1.1rem;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(255, 255, 255, 0.06);
+	color: var(--white);
+	font-size: 0.98rem;
+}
+
+.newsletter-embed-shell-light .subscribe-input {
+	border-color: rgba(15, 20, 29, 0.14);
+	background: rgba(255, 255, 255, 0.88);
+	color: var(--ink);
+}
+
+.subscribe-input::placeholder {
+	color: rgba(243, 240, 232, 0.48);
+}
+
+.newsletter-embed-shell-light .subscribe-input::placeholder {
+	color: rgba(15, 20, 29, 0.4);
+}
+
+.subscribe-input:focus {
+	outline: none;
+	border-color: rgba(199, 169, 104, 0.7);
+	box-shadow: 0 0 0 3px rgba(199, 169, 104, 0.14);
+}
+
+.subscribe-submit {
+	min-width: 10.75rem;
+}
+
+.subscribe-submit[disabled] {
+	opacity: 0.72;
+	cursor: wait;
+}
+
+.subscribe-privacy {
 	margin: 0;
-	border-radius: 1rem !important;
-	background-color: transparent;
-	box-shadow: none;
+	font-size: 0.84rem;
+	line-height: 1.55;
+	color: rgba(243, 240, 232, 0.62);
 }
 
-.newsletter-shell .madrid-beehiiv-embed {
-	height: 460px;
-	min-height: 460px;
+.newsletter-embed-shell-light .subscribe-privacy {
+	color: rgba(15, 20, 29, 0.58);
 }
 
-.newsletter-signup-shell .madrid-beehiiv-embed,
-.article-shell + .newsletter-signup-band .madrid-beehiiv-embed {
-	height: 430px;
-	min-height: 430px;
+.subscribe-message {
+	min-height: 1.5rem;
+	margin: 0;
+	font-size: 0.88rem;
+	line-height: 1.45;
+}
+
+.subscribe-message.is-pending {
+	color: rgba(243, 240, 232, 0.72);
+}
+
+.subscribe-message.is-success {
+	color: #9fe3b1;
+}
+
+.subscribe-message.is-error {
+	color: #ffb1b1;
+}
+
+.newsletter-embed-shell-light .subscribe-message.is-pending {
+	color: rgba(15, 20, 29, 0.62);
+}
+
+.newsletter-embed-shell-light .subscribe-message.is-success {
+	color: #1f7a39;
+}
+
+.newsletter-embed-shell-light .subscribe-message.is-error {
+	color: #b42318;
 }
 
 .newsletter-page .button.ghost {
@@ -1158,9 +1267,9 @@ a {
 
 .form-note {
 	margin: 0;
-	font-size: 0.88rem;
-	line-height: 1.6;
-	color: rgba(243, 240, 232, 0.66);
+	font-size: 0.9rem;
+	line-height: 1.55;
+	color: rgba(243, 240, 232, 0.76);
 }
 
 .partners-section {
@@ -1525,6 +1634,26 @@ a {
 		min-height: 24rem;
 	}
 
+	.hero-shell {
+		gap: 1.75rem;
+	}
+
+	.summary-panel {
+		padding: 1.4rem 1.45rem;
+	}
+
+	.summary-stats {
+		padding: 0.8rem 0.95rem;
+	}
+
+	.social-panel,
+	.newsletter-shell,
+	.newsletter-hero-shell,
+	.newsletter-signup-shell,
+	.fantasy-shell {
+		padding: 1.4rem;
+	}
+
 	.partners-cta {
 		flex-direction: column;
 		align-items: flex-start;
@@ -1538,43 +1667,31 @@ a {
 
 @media screen and (max-width: 736px) {
 	#intro.madrid-intro {
-		padding-top: 7rem;
-		padding-bottom: 4rem;
+		padding: 6.6rem 1.25rem 3.4rem 1.25rem;
 	}
 
 	.newsletter-hero,
 	.article-shell {
-		padding-top: 2.5rem;
+		padding-top: 2rem;
 	}
 
 	.newsletter-hero-shell,
 	.newsletter-shell {
-		padding: 1.25rem;
+		padding: 1.15rem;
 	}
 
-	.madrid-beehiiv-embed,
-	.newsletter-shell .madrid-beehiiv-embed,
-	.newsletter-signup-shell .madrid-beehiiv-embed,
-	.article-shell + .newsletter-signup-band .madrid-beehiiv-embed {
-		height: 390px;
-		min-height: 390px;
+	.newsletter-signup-shell {
+		padding: 1.1rem;
 	}
 
 	#intro h1 {
-		font-size: clamp(3.3rem, 18vw, 5rem);
+		margin: 1rem 0 1.1rem 0;
+		font-size: clamp(2.9rem, 16vw, 4.3rem);
+		line-height: 0.92;
 	}
 
 	.madrid-section {
-		padding-top: 4rem;
-		padding-bottom: 4rem;
-	}
-
-	.pillars-grid {
-		grid-template-columns: 1fr;
-	}
-
-	.pillar-card {
-		min-height: 0;
+		padding: 3.25rem 1.25rem;
 	}
 
 	.hero-actions,
@@ -1598,20 +1715,162 @@ a {
 	.featured-copy,
 	.newsletter-card-body,
 	.newsletter-article {
-		padding: 1.35rem;
+		padding: 1.2rem;
+	}
+
+	.newsletter-card-link-featured {
+		grid-template-columns: 1fr;
+	}
+
+	.hero-copy,
+	.intro-copy,
+	.section-heading,
+	.section-heading.left,
+	.newsletter-hero-copy p:last-of-type {
+		max-width: none;
+	}
+
+	.hero-shell,
+	.hero-summary-grid,
+	.social-layout,
+	.newsletter-post-grid,
+	.partners-grid,
+	.partners-showcase,
+	.fantasy-shell {
+		gap: 1rem;
+	}
+
+	.hero-composition {
+		min-height: 19rem;
+	}
+
+	.hero-scorecard {
+		left: 1rem;
+		right: 1rem;
+		bottom: 1rem;
+		padding: 1rem;
+	}
+
+	.scorecard-line {
+		gap: 0.75rem;
+	}
+
+	.section-heading {
+		margin-bottom: 1.75rem;
+	}
+
+	.section-heading h2,
+	.newsletter-hero-copy h1 {
+		font-size: clamp(2.2rem, 11vw, 3rem);
+		line-height: 0.96;
+	}
+
+	.summary-panel,
+	.summary-stats,
+	.social-panel,
+	.newsletter-shell,
+	.newsletter-hero-shell,
+	.newsletter-signup-shell,
+	.partner-block,
+	.fantasy-shell {
+		padding: 1.15rem;
+	}
+
+	.newsletter-embed-shell {
+		padding: 0.45rem;
+		border-radius: 1rem;
+	}
+
+	.newsletter-embed-label {
+		margin-bottom: 0.45rem;
+		font-size: 0.64rem;
+		letter-spacing: 0.12em;
+	}
+
+	.subscribe-card-intro {
+		padding: 0.9rem;
+		margin-bottom: 0.7rem;
+	}
+
+	.subscribe-card-intro strong {
+		font-size: 1.45rem;
+	}
+
+	.subscribe-field-row {
+		grid-template-columns: 1fr;
+		gap: 0.65rem;
+	}
+
+	.subscribe-input,
+	.subscribe-submit {
+		width: 100%;
+	}
+
+	.summary-stats li,
+	.social-metric,
+	.platform-row {
+		padding-top: 0.9rem;
+		padding-bottom: 0.9rem;
 	}
 
 	.platform-row {
 		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.platform-row > span:last-child {
+		padding-left: 2.75rem;
+	}
+
+	.newsletter-copy p,
+	.newsletter-hero-copy p:last-of-type,
+	.summary-panel p,
+	.fantasy-copy p,
+	.partner-block p,
+	.social-metric span {
+		font-size: 0.96rem;
+		line-height: 1.7;
+	}
+
+	.newsletter-signup-content,
+	.newsletter-links,
+	.fantasy-actions,
+	.newsletter-signup-actions {
+		gap: 0.7rem;
+	}
+
+	.newsletter-post-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.featured-media,
+	.newsletter-card-image {
+		min-height: 11.5rem;
+	}
+
+	.partners-visual-image img {
+		min-height: 12rem;
+	}
+
+	.fantasy-teaser {
+		min-height: 15rem;
+	}
+
+	.form-note {
+		font-size: 0.82rem;
+		line-height: 1.5;
 	}
 
 	.teaser-scoreboard {
+		top: 1rem;
 		right: 1rem;
-		width: 8.6rem;
+		width: 8rem;
+		padding: 0.85rem;
 	}
 
 	.teaser-player-card {
 		left: 1rem;
-		width: min(52%, 13rem);
+		bottom: 1rem;
+		width: min(54%, 11rem);
 	}
 }

@@ -31,7 +31,7 @@
 				<li class="active"><a href="newsletter.html">Newsletter</a></li>
 				<li><a href="index.html#redes">Redes</a></li>
 				<li><a href="index.html#partners">Colaboraciones</a></li>
-				<li><a href="index.html#fantasy">Fantasy</a></li>
+				<li><a href="https://fantasy.madridtotal.mx" target="_blank" rel="noopener noreferrer">Fantasy</a></li>
 			</ul>
 			<ul class="icons nav-cta">
 				<li><a href="#signup-title" class="button nav-button scrolly">Suscribirse</a></li>
@@ -91,14 +91,19 @@
 					<div class="newsletter-signup-content">
 						<div class="newsletter-embed-shell newsletter-embed-shell-light" aria-label="Suscripcion a EN FRIO">
 							<p class="newsletter-embed-label">Suscripcion directa</p>
-							<iframe
-								src="https://subscribe-forms.beehiiv.com/b87f7645-0eed-4487-b339-8bfe2fe6ed06"
-								class="beehiiv-embed madrid-beehiiv-embed"
-								data-test-id="beehiiv-embed"
-								frameborder="0"
-								scrolling="no"
-								title="Suscripcion a EN FRIO"
-							></iframe>
+							<div class="subscribe-card-intro">
+								<strong>EN FRIO | Madrid Total</strong>
+								<span>La idea completa de MT, ya con un formato propio y sin ruido.</span>
+							</div>
+							<form class="newsletter-subscribe-form" data-subscribe-form data-source="newsletter-hub">
+								<label class="sr-only" for="subscribe-email-hub">Correo electronico</label>
+								<div class="subscribe-field-row">
+									<input id="subscribe-email-hub" class="subscribe-input" type="email" name="email" placeholder="Tu correo" autocomplete="email" required />
+									<button type="submit" class="button primary subscribe-submit">Suscribirme</button>
+								</div>
+								<p class="subscribe-privacy">Te llega directo al correo y sigues dentro de Madrid Total.</p>
+								<p class="subscribe-message" data-subscribe-message aria-live="polite"></p>
+							</form>
 						</div>
 						<div class="newsletter-signup-actions">
 							<a href="#latest-posts" class="button primary scrolly">Seguir leyendo</a>
@@ -153,8 +158,7 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/custom.js"></script>
 	<script src="assets/js/newsletter.js"></script>
-	<script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
-	<script async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+	<script src="assets/js/subscribe.js"></script>
 
 </body>
 </html>
