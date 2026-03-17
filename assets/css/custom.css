@@ -1906,7 +1906,6 @@ a {
 
 	.hero-shell,
 	.social-layout,
-	.social-proof-grid,
 	.newsletter-post-grid,
 	.partners-grid,
 	.partners-showcase,
@@ -1914,9 +1913,35 @@ a {
 		gap: 1rem;
 	}
 
+	.social-proof-grid {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.social-proof-card {
+		padding: 1.15rem;
+	}
+
+	.social-proof-card h3 {
+		font-size: 2rem;
+		line-height: 0.96;
+	}
+
 	.social-proof-embed-shell {
 		min-height: auto;
 		padding: 0.6rem;
+		border-radius: 1rem;
+	}
+
+	.social-proof-embed-shell .social-proof-tweet,
+	.social-proof-embed-shell .instagram-media {
+		max-width: 100% !important;
+	}
+
+	.social-proof-embed-shell .twitter-tweet-rendered,
+	.social-proof-embed-shell iframe {
+		max-width: 100% !important;
+		width: 100% !important;
 	}
 
 	.newsletter-home-preview {
