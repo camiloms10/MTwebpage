@@ -22,11 +22,34 @@
 	}
 
 	function initEmbeds() {
-		var twitterBlock = document.querySelector(".twitter-tweet");
+		var twitterBlock = document.querySelector(".social-proof-tweet");
 		if (twitterBlock) {
 			loadScript("https://platform.twitter.com/widgets.js", function () {
 				if (window.twttr && window.twttr.widgets) {
-					window.twttr.widgets.load();
+					var tweetContainers = document.querySelectorAll(".social-proof-tweet[data-tweet-id]");
+					tweetContainers.forEach(function (container) {
+						if (container.dataset.rendered === "true") {
+							return;
+						}
+
+						var tweetId = container.dataset.tweetId;
+						if (!tweetId) {
+							return;
+						}
+
+						window.twttr.widgets.createTweet(tweetId, container, {
+							align: "center",
+							dnt: true,
+							theme: "dark",
+							lang: "es"
+						}).then(function (el) {
+							if (el) {
+								container.dataset.rendered = "true";
+							}
+						}).catch(function () {
+							container.dataset.rendered = "true";
+						});
+					});
 				}
 			});
 		}

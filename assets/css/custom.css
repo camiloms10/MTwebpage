@@ -766,7 +766,7 @@ a {
 	border-color: rgba(15, 20, 29, 0.08);
 }
 
-.social-proof-embed-shell .twitter-tweet,
+.social-proof-embed-shell .social-proof-tweet,
 .social-proof-embed-shell .instagram-media {
 	width: 100% !important;
 	max-width: 34rem !important;
