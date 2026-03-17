@@ -1623,45 +1623,6 @@ a {
 }
 
 @media screen and (max-width: 980px) {
-	#header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 10010;
-		width: auto;
-		height: auto;
-		margin: 0;
-		padding: 0.85rem 1.15rem;
-		background: rgba(10, 12, 18, 0.86);
-		backdrop-filter: blur(18px);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-	}
-
-	#header .logo {
-		display: inline-flex;
-		align-items: center;
-	}
-
-	#header .logo .logo-text {
-		font-size: 0.82rem;
-		letter-spacing: 0.08em;
-	}
-
-	#navPanelToggle {
-		top: 0.72rem;
-		right: 0.85rem;
-		z-index: 10011;
-	}
-
-	.newsletter-page #wrapper {
-		padding-top: 4.8rem;
-	}
-
-	body:not(.newsletter-page) #intro.madrid-intro {
-		padding-top: 9rem;
-	}
-
 	#intro.madrid-intro,
 	.madrid-section,
 	#footer {
@@ -1734,14 +1695,6 @@ a {
 @media screen and (max-width: 736px) {
 	#intro.madrid-intro {
 		padding: 6.6rem 1.25rem 3.4rem 1.25rem;
-	}
-
-	body:not(.newsletter-page) #intro.madrid-intro {
-		padding-top: 7.6rem;
-	}
-
-	.newsletter-page #wrapper {
-		padding-top: 4.45rem;
 	}
 
 	.newsletter-hero,
