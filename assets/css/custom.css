@@ -823,6 +823,11 @@ a {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1rem;
+	align-content: start;
+}
+
+.newsletter-home-preview[hidden] {
+	display: none !important;
 }
 
 .newsletter-home-card {

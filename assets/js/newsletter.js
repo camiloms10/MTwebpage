@@ -245,6 +245,39 @@
 		}
 	}
 
+	function renderHomePreview(data) {
+		var container = document.getElementById("newsletter-home-preview");
+		if (!container) return;
+
+		var posts = Array.isArray(data.posts) ? data.posts.slice().sort(function (a, b) {
+			return new Date(b.published_at || 0) - new Date(a.published_at || 0);
+		}) : [];
+
+		var previewPosts = posts.slice(0, 2);
+		if (!previewPosts.length) return;
+
+		container.hidden = false;
+		container.removeAttribute("hidden");
+		container.innerHTML = previewPosts.map(function (post) {
+			var coverStyle = post.cover_image_url
+				? "background-image: linear-gradient(180deg, rgba(12, 17, 24, 0.08), rgba(12, 17, 24, 0.78)), url('" + escapeHtml(post.cover_image_url) + "');"
+				: "background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));";
+
+			return [
+				'<article class="newsletter-home-card">',
+				'<a class="newsletter-card-link" href="newsletter-post.html?slug=' + encodeURIComponent(post.slug) + '" aria-label="Leer ' + escapeHtml(post.title) + '">',
+				'<span class="newsletter-home-card-image" style="' + coverStyle + '"></span>',
+				'<div class="newsletter-home-card-body">',
+				'<p class="featured-meta">' + escapeHtml(buildMetaLine([formatDate(post.published_at)])) + '</p>',
+				'<h3>' + escapeHtml(post.title) + '</h3>',
+				'<p>' + escapeHtml(post.excerpt || "Leer el ultimo EN FRIO dentro de Madrid Total.") + '</p>',
+				'</div>',
+				'</a>',
+				'</article>'
+			].join("");
+		}).join("");
+	}
+
 	function renderArticle(data) {
 		var status = document.getElementById("article-status");
 		var article = document.getElementById("newsletter-article");
@@ -293,6 +326,7 @@
 		})
 		.then(function (data) {
 			renderFeed(data);
+			renderHomePreview(data);
 			renderArticle(data);
 		})
 		.catch(function () {
