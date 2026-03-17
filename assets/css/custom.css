@@ -227,6 +227,16 @@ a {
 	color: var(--white);
 }
 
+.scorecard-line span {
+	flex: 0 0 42%;
+}
+
+.scorecard-line strong {
+	flex: 0 0 54%;
+	text-align: right;
+	word-break: break-word;
+}
+
 .scorecard-line.muted strong,
 .scorecard-line.muted span {
 	color: rgba(243, 240, 232, 0.78);
@@ -1607,7 +1617,6 @@ a {
 	}
 
 	.hero-shell,
-	.hero-summary-grid,
 	.social-layout,
 	.newsletter-hero-shell,
 	.newsletter-featured-card,
@@ -1731,7 +1740,6 @@ a {
 	}
 
 	.hero-shell,
-	.hero-summary-grid,
 	.social-layout,
 	.newsletter-post-grid,
 	.partners-grid,
@@ -1748,11 +1756,23 @@ a {
 		left: 1rem;
 		right: 1rem;
 		bottom: 1rem;
-		padding: 1rem;
+		padding: 0.95rem;
 	}
 
 	.scorecard-line {
 		gap: 0.75rem;
+		align-items: flex-start;
+	}
+
+	.scorecard-line span,
+	.scorecard-line strong {
+		flex: 1 1 auto;
+	}
+
+	.scorecard-line strong {
+		max-width: 58%;
+		font-size: 0.96rem;
+		line-height: 1.35;
 	}
 
 	.section-heading {
