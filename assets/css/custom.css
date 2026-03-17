@@ -1771,40 +1771,11 @@ a {
 	}
 
 	.hero-composition {
+		display: none;
+	}
+
+	.hero-composition {
 		min-height: 19rem;
-	}
-
-	.hero-scorecard {
-		left: 1rem;
-		right: 1rem;
-		bottom: 1rem;
-		padding: 0.9rem;
-	}
-
-	.scorecard-line {
-		flex-direction: column;
-		gap: 0.3rem;
-		align-items: stretch;
-		padding: 0.7rem 0;
-	}
-
-	.scorecard-line span,
-	.scorecard-line strong {
-		flex: none;
-		max-width: none;
-		width: 100%;
-		text-align: left;
-	}
-
-	.scorecard-line strong {
-		font-size: 0.96rem;
-		line-height: 1.28;
-	}
-
-	.scorecard-foot {
-		margin-top: 0.7rem;
-		font-size: 0.84rem;
-		line-height: 1.55;
 	}
 
 	.section-heading {
