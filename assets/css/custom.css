@@ -962,6 +962,41 @@ a {
 	color: rgba(243, 240, 232, 0.76);
 }
 
+.newsletter-hero-icons {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.8rem;
+	margin-top: auto;
+	padding-top: 1.35rem;
+}
+
+.newsletter-hero-icon-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.55rem;
+	min-height: 6.5rem;
+	padding: 1rem 0.85rem;
+	border-radius: 1.15rem;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	text-align: center;
+}
+
+.newsletter-hero-icon-card .icon {
+	font-size: 1.25rem;
+	color: var(--gold);
+}
+
+.newsletter-hero-icon-card span {
+	font-size: 0.82rem;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: rgba(243, 240, 232, 0.78);
+}
+
 .newsletter-feed {
 	padding-top: 1rem;
 }
