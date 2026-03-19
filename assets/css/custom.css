@@ -1885,21 +1885,21 @@ a {
 
 @media screen and (max-width: 736px) {
 	#intro.madrid-intro {
-		padding: 6.6rem 1.25rem 3.4rem 1.25rem;
+		padding: 5.9rem 1.1rem 2.7rem 1.1rem;
 	}
 
 	.newsletter-hero,
 	.article-shell {
-		padding-top: 2rem;
+		padding-top: 1.55rem;
 	}
 
 	.newsletter-hero-shell,
 	.newsletter-shell {
-		padding: 1.15rem;
+		padding: 1rem;
 	}
 
 	.newsletter-signup-shell {
-		padding: 1.1rem;
+		padding: 1rem;
 	}
 
 	.newsletter-signup-copy {
@@ -1907,13 +1907,13 @@ a {
 	}
 
 	#intro h1 {
-		margin: 1rem 0 1.1rem 0;
-		font-size: clamp(2.9rem, 16vw, 4.3rem);
+		margin: 0.85rem 0 0.95rem 0;
+		font-size: clamp(2.5rem, 14vw, 3.8rem);
 		line-height: 0.92;
 	}
 
 	.madrid-section {
-		padding: 3.25rem 1.25rem;
+		padding: 2.5rem 1.1rem;
 	}
 
 	.hero-actions,
@@ -1958,7 +1958,7 @@ a {
 	.partners-grid,
 	.partners-showcase,
 	.fantasy-shell {
-		gap: 1rem;
+		gap: 0.8rem;
 	}
 
 	.social-proof-grid {
@@ -1967,11 +1967,11 @@ a {
 	}
 
 	.social-proof-card {
-		padding: 1.15rem;
+		padding: 1rem;
 	}
 
 	.social-proof-card h3 {
-		font-size: 2rem;
+		font-size: 1.65rem;
 		line-height: 0.96;
 	}
 
@@ -2005,12 +2005,12 @@ a {
 	}
 
 	.section-heading {
-		margin-bottom: 1.75rem;
+		margin-bottom: 1.2rem;
 	}
 
 	.section-heading h2,
 	.newsletter-hero-copy h1 {
-		font-size: clamp(2.2rem, 11vw, 3rem);
+		font-size: clamp(2rem, 10.5vw, 2.7rem);
 		line-height: 0.96;
 	}
 
@@ -2022,11 +2022,11 @@ a {
 	.newsletter-signup-shell,
 	.partner-block,
 	.fantasy-shell {
-		padding: 1.15rem;
+		padding: 1rem;
 	}
 
 	.newsletter-embed-shell {
-		padding: 0.45rem;
+		padding: 0.4rem;
 		border-radius: 1rem;
 	}
 
@@ -2037,12 +2037,12 @@ a {
 	}
 
 	.subscribe-card-intro {
-		padding: 0.9rem;
-		margin-bottom: 0.7rem;
+		padding: 0.8rem;
+		margin-bottom: 0.6rem;
 	}
 
 	.subscribe-card-intro strong {
-		font-size: 1.45rem;
+		font-size: 1.28rem;
 	}
 
 	.subscribe-field-row {
@@ -2058,8 +2058,8 @@ a {
 	.summary-stats li,
 	.social-metric,
 	.platform-row {
-		padding-top: 0.9rem;
-		padding-bottom: 0.9rem;
+		padding-top: 0.72rem;
+		padding-bottom: 0.72rem;
 	}
 
 	.platform-row {
@@ -2077,8 +2077,8 @@ a {
 	.fantasy-copy p,
 	.partner-block p,
 	.social-metric span {
-		font-size: 0.96rem;
-		line-height: 1.7;
+		font-size: 0.92rem;
+		line-height: 1.58;
 	}
 
 	.newsletter-signup-content,
@@ -2088,21 +2088,50 @@ a {
 		gap: 0.7rem;
 	}
 
+	.newsletter-points,
+	.newsletter-hero-points {
+		margin-top: 0.8rem;
+	}
+
+	.newsletter-points li,
+	.newsletter-hero-points li {
+		margin-bottom: 0.45rem;
+		line-height: 1.45;
+	}
+
 	.newsletter-post-grid {
 		grid-template-columns: 1fr;
 	}
 
 	.featured-media,
 	.newsletter-card-image {
-		min-height: 11.5rem;
+		min-height: 9.5rem;
 	}
 
 	.partners-visual-image img {
-		min-height: 12rem;
+		min-height: 9rem;
 	}
 
 	.fantasy-teaser {
-		min-height: 15rem;
+		min-height: 12.5rem;
+	}
+
+	.newsletter-hero-icons {
+		gap: 0.55rem;
+		padding-top: 1rem;
+	}
+
+	.newsletter-hero-icon-card {
+		min-height: 5.1rem;
+		padding: 0.7rem 0.5rem;
+	}
+
+	.newsletter-hero-icon-card .icon {
+		font-size: 1rem;
+	}
+
+	.newsletter-hero-icon-card span {
+		font-size: 0.68rem;
 	}
 
 	.form-note {
@@ -2111,8 +2140,8 @@ a {
 	}
 
 	#footer {
-		padding-left: 1.25rem;
-		padding-right: 1.25rem;
+		padding-left: 1.1rem;
+		padding-right: 1.1rem;
 	}
 
 	#footer > .split.contact > section {
@@ -2131,5 +2160,14 @@ a {
 		left: 1rem;
 		bottom: 1rem;
 		width: min(54%, 11rem);
+	}
+
+	.partners-cta {
+		margin-top: 1rem;
+		padding-top: 1rem;
+	}
+
+	.footer-social-list {
+		gap: 0.75rem;
 	}
 }
