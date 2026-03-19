@@ -629,7 +629,8 @@ a {
 	border-radius: 0.75rem;
 }
 
-.platform-row span:first-child {
+.platform-row > span:first-child,
+.platform-link > span:first-child {
 	font-weight: 800;
 	color: var(--white);
 }
@@ -638,6 +639,11 @@ a {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.75rem;
+}
+
+.platform-label .social-icon-mark,
+.platform-link .social-icon-mark {
+	color: var(--gold);
 }
 
 .social-icon-mark {
@@ -966,8 +972,7 @@ a {
 }
 
 .newsletter-featured-card {
-	display: grid;
-	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+	display: block;
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 	overflow: hidden;
