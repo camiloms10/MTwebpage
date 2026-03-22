@@ -79,8 +79,8 @@
 				var href = node.getAttribute("href");
 				if (href) {
 					if (/enfrio\.madridtotal\.mx/i.test(href)) {
-						element.setAttribute("href", "#article-subscribe");
-						element.className = "article-subscribe-link";
+						element.setAttribute("href", "#article-signup");
+						element.className = "article-subscribe-link scrolly";
 					} else {
 						element.setAttribute("href", href);
 					}
@@ -168,6 +168,22 @@
 		}
 
 		window.setTimeout(loadWidgets, 250);
+	}
+
+	function initScrollyLinks(container) {
+		if (!container || !window.jQuery || !window.jQuery.fn || typeof window.jQuery.fn.scrolly !== "function") {
+			return;
+		}
+
+		var $container = window.jQuery(container);
+		$container.find('.scrolly[href="#article-signup"]').scrolly({
+			offset: function () {
+				var nav = document.getElementById("nav");
+				var baseOffset = nav ? nav.offsetHeight : 0;
+				return baseOffset + 32;
+			}
+		});
+		$container.find('.scrolly').not('[href="#article-signup"]').scrolly();
 	}
 
 	function renderFeed(data) {
@@ -310,10 +326,11 @@
 			'<div class="article-body">' + sanitizeBeehiivContent(post.content_html || "") + '</div>',
 			'<div class="newsletter-card-actions">',
 			'<a class="button ghost-light" href="newsletter.html">Volver al archivo</a>',
-			'<a class="button primary" href="#article-subscribe">Suscribirme a EN FRIO</a>',
+			'<a class="button primary scrolly" href="#article-signup">Suscribirme a EN FRIO</a>',
 			'</div>'
 		].join("");
 
+		initScrollyLinks(article);
 		ensureXWidgets(article);
 
 		document.title = "Madrid Total | " + post.title;
