@@ -1,0 +1,40 @@
+{
+  "updatedAt": "2026-03-23T00:00:00.000Z",
+  "platforms": {
+    "x": {
+      "label": "X (Twitter)",
+      "followers": 132500,
+      "source": "manual",
+      "lastCheckedAt": null,
+      "status": "skipped"
+    },
+    "facebook": {
+      "label": "Facebook",
+      "followers": 96000,
+      "source": "manual",
+      "lastCheckedAt": null,
+      "status": "skipped"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "followers": 28800,
+      "source": "manual",
+      "lastCheckedAt": null,
+      "status": "skipped"
+    },
+    "tiktok": {
+      "label": "TikTok",
+      "followers": 26100,
+      "source": "manual",
+      "lastCheckedAt": null,
+      "status": "skipped"
+    },
+    "youtube": {
+      "label": "YouTube",
+      "followers": 205,
+      "source": "manual",
+      "lastCheckedAt": null,
+      "status": "skipped"
+    }
+  }
+}

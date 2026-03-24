@@ -2,8 +2,21 @@ name: Sync Beehiiv Posts
 
 on:
   workflow_dispatch:
+    inputs:
+      event_type:
+        description: "Event that triggered the sync"
+        required: false
+        type: string
+      post_id:
+        description: "Beehiiv post id"
+        required: false
+        type: string
+      post_slug:
+        description: "Beehiiv post slug"
+        required: false
+        type: string
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
@@ -26,6 +39,12 @@ jobs:
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
         run: node scripts/sync-beehiiv-posts.mjs
+
+      - name: Log trigger context
+        run: |
+          echo "event_type=${{ github.event.inputs.event_type }}"
+          echo "post_id=${{ github.event.inputs.post_id }}"
+          echo "post_slug=${{ github.event.inputs.post_slug }}"
 
       - name: Commit updated data
         run: |

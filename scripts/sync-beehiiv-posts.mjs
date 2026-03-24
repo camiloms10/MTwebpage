@@ -112,19 +112,29 @@ function normalizePost(post) {
 }
 
 async function fetchAllPosts(baseUrl) {
-	let page = 1;
 	const pageSize = 100;
 	const collected = [];
+	let cursor = null;
 
 	while (true) {
-		const listData = await fetchJson(`${baseUrl}?limit=${pageSize}&page=${page}&status=confirmed`);
+		const url = new URL(baseUrl);
+		url.searchParams.set("limit", String(pageSize));
+		url.searchParams.set("status", "confirmed");
+		if (cursor) {
+			url.searchParams.set("cursor", cursor);
+		}
+
+		const listData = await fetchJson(url.toString());
 		const posts = Array.isArray(listData.data) ? listData.data : [];
 		if (!posts.length) break;
 
 		collected.push(...posts);
 
-		if (posts.length < pageSize) break;
-		page += 1;
+		if (!listData.has_more || !listData.next_cursor) {
+			break;
+		}
+
+		cursor = listData.next_cursor;
 	}
 
 	return collected;
