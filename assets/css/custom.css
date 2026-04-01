@@ -1656,10 +1656,10 @@ a {
 }
 
 .partners-visual-kicker {
-	margin: 1rem 0 0.9rem 0;
-	font-size: 0.74rem;
+	margin: 0.85rem 0 0.8rem 0;
+	font-size: 0.68rem;
 	font-weight: 800;
-	letter-spacing: 0.16em;
+	letter-spacing: 0.14em;
 	text-transform: uppercase;
 	color: var(--gold);
 }
@@ -1673,8 +1673,8 @@ a {
 .partners-copy-panel strong {
 	display: block;
 	max-width: 28rem;
-	font-size: clamp(2rem, 4vw, 3rem);
-	line-height: 1.06;
+	font-size: clamp(1.45rem, 3vw, 2.2rem);
+	line-height: 1.12;
 	color: var(--white);
 }
 
