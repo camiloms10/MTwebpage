@@ -1734,6 +1734,12 @@ a {
 	color: var(--white) !important;
 }
 
+.partners-copy-panel .button.ghost-light {
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+	color: rgba(243, 240, 232, 0.92) !important;
+}
+
 .partners-contact-list {
 	margin: 0;
 	padding: 0;
