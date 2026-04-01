@@ -1585,9 +1585,13 @@ a {
 
 .partners-copy-panel {
 	margin-top: 1.5rem;
-	padding: 0;
-	border: 0;
-	background: transparent;
+	padding: 1.5rem;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 1.9rem;
+	background:
+		radial-gradient(circle at top right, rgba(199, 169, 104, 0.12), transparent 34%),
+		linear-gradient(180deg, rgba(18, 24, 34, 0.92), rgba(10, 14, 20, 0.94));
+	box-shadow: 0 1.2rem 2.6rem rgba(0, 0, 0, 0.18);
 	max-width: 40rem;
 }
 
