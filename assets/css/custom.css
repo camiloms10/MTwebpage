@@ -1564,6 +1564,19 @@ a {
 	color: rgba(243, 240, 232, 0.7);
 }
 
+.partners-section .section-heading h2 {
+	font-size: clamp(1.95rem, 3.4vw, 2.9rem);
+	margin-top: 0.75rem;
+	margin-bottom: 0.85rem;
+	max-width: 30rem;
+}
+
+.partners-section .section-heading p {
+	font-size: 0.98rem;
+	line-height: 1.7;
+	max-width: 34rem;
+}
+
 .partners-layout {
 	display: grid;
 	grid-template-columns: minmax(0, 1.12fr) minmax(20rem, 0.88fr);
@@ -1581,18 +1594,19 @@ a {
 	flex-direction: column;
 	grid-column: 1;
 	min-width: 0;
+	gap: 0.35rem;
 }
 
 .partners-copy-panel {
-	margin-top: 1.5rem;
-	padding: 1.5rem;
+	margin-top: 0.9rem;
+	padding: 1.2rem 1.3rem;
 	border: 1px solid rgba(255, 255, 255, 0.08);
 	border-radius: 1.9rem;
 	background:
 		radial-gradient(circle at top right, rgba(199, 169, 104, 0.12), transparent 34%),
 		linear-gradient(180deg, rgba(18, 24, 34, 0.92), rgba(10, 14, 20, 0.94));
 	box-shadow: 0 1.2rem 2.6rem rgba(0, 0, 0, 0.18);
-	max-width: 40rem;
+	max-width: 36rem;
 }
 
 .partners-grid {
@@ -1677,8 +1691,8 @@ a {
 .partners-copy-panel strong {
 	display: block;
 	max-width: 28rem;
-	font-size: clamp(1.45rem, 3vw, 2.2rem);
-	line-height: 1.12;
+	font-size: clamp(1.28rem, 2.55vw, 1.95rem);
+	line-height: 1.16;
 	color: var(--white);
 }
 
@@ -1710,7 +1724,7 @@ a {
 }
 
 .partners-copy-panel .partners-actions {
-	margin-top: 1.25rem;
+	margin-top: 1rem;
 	justify-content: flex-start;
 }
 
