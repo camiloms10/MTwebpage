@@ -1655,6 +1655,35 @@ a {
 	color: rgba(243, 240, 232, 0.68);
 }
 
+.partners-contact-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.partners-contact-list li {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	margin-bottom: 0.55rem;
+	color: rgba(243, 240, 232, 0.82);
+}
+
+.partners-contact-list li:last-child {
+	margin-bottom: 0;
+}
+
+.partners-contact-list a {
+	color: inherit;
+}
+
+.fantasy-status-pill {
+	pointer-events: none;
+	opacity: 1;
+	border-color: rgba(255, 255, 255, 0.18);
+	background: rgba(255, 255, 255, 0.04);
+}
+
 .fantasy-section {
 	background: linear-gradient(180deg, #101722, #0d131d);
 }
@@ -2273,6 +2302,8 @@ a {
 	}
 
 	.partners-cta {
+		flex-direction: column;
+		align-items: flex-start;
 		margin-top: 1rem;
 		padding-top: 1rem;
 	}
