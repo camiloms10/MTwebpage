@@ -2058,6 +2058,10 @@ a {
 		width: 100%;
 	}
 
+	.partners-visual-image {
+		display: none;
+	}
+
 	#nav ul.icons.nav-cta {
 		width: 100%;
 		margin-left: 0;
