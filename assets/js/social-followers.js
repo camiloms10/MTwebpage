@@ -33,6 +33,22 @@
 		return String(value) + '+ audiencia social';
 	}
 
+	function formatAudienceCompact(value) {
+		if (typeof value !== 'number' || !isFinite(value)) {
+			return null;
+		}
+
+		if (value >= 1000000) {
+			return (Math.round((value / 1000000) * 10) / 10).toFixed(1).replace(/\.0$/, '') + 'M+';
+		}
+
+		if (value >= 1000) {
+			return (Math.round((value / 1000) * 10) / 10).toFixed(1).replace(/\.0$/, '') + 'k+';
+		}
+
+		return String(value) + '+';
+	}
+
 	function formatUpdatedAt(value) {
 		var date = new Date(value);
 		if (isNaN(date.getTime())) {
@@ -76,9 +92,16 @@
 			detailX.textContent = formatFollowers(data.platforms.x.followers);
 		}
 
-		var totalNode = document.querySelector('[data-social-total]');
-		if (totalNode) {
-			totalNode.textContent = formatAudience(total);
+		var totalNodes = document.querySelectorAll('[data-social-total]');
+		var audience = formatAudience(total);
+		for (var k = 0; k < totalNodes.length; k += 1) {
+			totalNodes[k].textContent = audience;
+		}
+
+		var compactTotalNodes = document.querySelectorAll('[data-social-total-compact]');
+		var compactAudience = formatAudienceCompact(total);
+		for (var l = 0; l < compactTotalNodes.length; l += 1) {
+			compactTotalNodes[l].textContent = compactAudience;
 		}
 
 		var updatedNode = document.querySelector('[data-social-updated]');
