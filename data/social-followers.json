@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-23T00:00:00.000Z",
+  "updatedAt": "2026-04-10T00:00:00.000Z",
   "platforms": {
     "x": {
       "label": "X (Twitter)",
@@ -10,28 +10,28 @@
     },
     "facebook": {
       "label": "Facebook",
-      "followers": 96000,
+      "followers": 101200,
       "source": "manual",
       "lastCheckedAt": null,
       "status": "skipped"
     },
     "instagram": {
       "label": "Instagram",
-      "followers": 28800,
+      "followers": 31300,
       "source": "manual",
       "lastCheckedAt": null,
       "status": "skipped"
     },
     "tiktok": {
       "label": "TikTok",
-      "followers": 26100,
+      "followers": 30100,
       "source": "manual",
       "lastCheckedAt": null,
       "status": "skipped"
     },
     "youtube": {
       "label": "YouTube",
-      "followers": 205,
+      "followers": 2600,
       "source": "manual",
       "lastCheckedAt": null,
       "status": "skipped"
